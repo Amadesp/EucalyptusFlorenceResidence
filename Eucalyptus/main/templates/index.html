@@ -1,0 +1,380 @@
+{% extends 'base.html'%}
+{%load static%}
+
+{% block content %}
+<style>
+  li{
+    list-style: none;
+  }
+</style>
+<body class="bg-light">
+  <div class="container mt-5 mb-5 pt-5">
+      <div class="row" id="carousel-1">
+        <div class="col">
+          <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+              {%if baner%}
+                  {%for item in baner%}
+                  <div class="carousel-item active" data-bs-interval="10000">
+                      <!-- <h3 class="text-center">Salão de festa.</h3> -->
+                      <img src="../../media/{{item.imagem}}" class="d-block w-100" alt="..." style="border: 10px; border-radius: 10px;">
+                      <div class="carousel-caption d-none d-md-block">
+                        <!-- <h5>{{item.titulo}}</h5> -->
+                        <!-- <p>Some representative placeholder content for the first slide.</p> --> -->
+                      </div>
+                    </div>
+                  {%endfor%}
+              {%endif%}
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 ">
+          <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-acerca-tab" data-bs-toggle="tab" href="#nav-acerca" role="tab" aria-controls="nav-acerca" aria-selected="true">Acerca deste hotel</a>
+              <a class="nav-item nav-link" id="nav-localizacao-tab" data-bs-toggle="tab" href="#nav-localizacao" role="tab" aria-controls="nav-localizacao" aria-selected="false">Localização</a>
+              <a class="nav-item nav-link" id="nav-ligar-tab" data-bs-toggle="tab" href="#nav-ligar" role="tab" aria-controls="nav-ligar" aria-selected="false">Ligar</a>
+              <a class="nav-item nav-link" id="nav-fotos-tab" data-bs-toggle="tab" href="#nav-fotos" role="tab" aria-controls="nav-fotos" aria-selected="false">Fotos</a>
+            </div>
+          </nav>
+          <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-acerca" role="tabpanel" aria-labelledby="nav-acerca-tab">
+              <div class="row">
+                <div class="col">
+                  <p>Hora de Chegada : 14:00</p>
+                  <p>Hora de Partida : 12:00</p>
+                </div>
+                <div class="col">
+                  <b><p>Morada e informacao de contacto</p></b>
+                  <ul>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                      <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                      <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg><img src="page/img/icon/local-Recovered.png" class=" " style="width: 22px;" alt="" >&nbsp; Rua da Igreja ou da Linha Férrea, 700M da ponte do Albasine/Guava (Maputo-Mz)</p></li>
+                    
+                  </ul>
+                </div>
+              </div>      
+              <div class="row">
+                <div class="col">
+                  <b><p>Comodidades</p></b>
+                  <p>Comodidades populares</p>
+                  <ul>
+                    <li><p>Pequeno almoço grátis</p></li>
+                    <li><p class="m-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wifi" viewBox="0 0 16 16">
+                      <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/>
+                      <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091l.016-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/>
+                    </svg> &nbsp; Wi-Fi grátis</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Parque de estacionamento grátis</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Restaurante</p></li>
+                    
+                  </ul>
+                </div>
+                <div class="col">
+                  <b><p>Políticas e pagamentos</p></b>
+                  <ul>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Cartões de crédito</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Cartões de débito</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Pagamentos por dispositivo móvel via NFC</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Dinheiro</p></li>
+                  </ul>
+                </div>
+              </div>   
+              <div class="row">
+                <div class="col">
+                  <b><p>Piscinas</p></b>
+                  <ul>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>&nbsp; Piscina</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp; banheira de hidromassagem</p></li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <b><p>Bem-estar</p></b>
+                  <ul>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>&nbsp; centro de fitness</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>&nbsp; Spa não disponível</p></li>
+                  </ul>
+                </div>
+              </div> 
+              <div class="row">
+                <div class="col">
+                  <b><p>Quartos</p></b>
+                  <ul><li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                  </svg>&nbsp; ar condicionado</p></li></ul>
+                </div>
+                <div class="col">
+                  <b><p>Alimentação e bebidas</p></b>
+                  <ul>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Restaurante</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Bar</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Serviço de quartos</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Pequeno-almoço grátis</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Pequeno-almoço buffet</p></li>
+                  </ul>
+                </div>
+              </div>  
+              <div class="row">
+                <div class="col">
+                  <b><p>Serviços</p></b>
+                  <ul>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Receção 24 horas</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Lavandaria com serviço completo</p></li>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Serviço de limpeza</p></li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <b><p>Estacionamento e transportes</p></b>
+                  <ul>
+                    <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>&nbsp;Parque de estacionamento grátis</p></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <b><p>Animais de estimação</p></b>
+                  <ul>
+                      <li><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                      </svg>&nbsp; animais de estimação</p></li>
+                  </ul>
+                </div>
+              </div> 
+            </div>
+            <!-- Localizacao -->
+            <div class="tab-pane fade" id="nav-localizacao" role="tabpanel" aria-labelledby="nav-localizacao-tab">
+              {%if data_localizacao%}
+                {%for item in data_localizacao%}
+                  <p class=""><img src="{%static 'image/icon/local-Recovered.png'%}" class=" " style="width: 22px;" alt="" >&nbsp;{{item.localizacao}}</p>
+                  <iframe id="mapaimg"  width="600" height="450" style="border:0;" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1623.497543128874!2d32.6431274642305!3d-25.837535110181953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x1ee696bf2b9e98c3%3A0xfa1383360f9eaa08!2sBairro%20dos%20Pescadores%2C%20Maputo!3m2!1d-25.8376312!2d32.6448812!5e1!3m2!1spt-PT!2smz!4v1688286862430!5m2!1spt-PT!2smz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                {%endfor%}
+              {%endif%}  
+            </div>
+            <!-- Ligar -->
+            <div class="tab-pane fade" id="nav-ligar" role="tabpanel" aria-labelledby="nav-ligar-tab">
+              {% if data_contactos%}
+                <div class="row my-3">
+                  {%for item in data_contactos%}
+                    <div class="col-6">
+                        <p  class="small"><img src="../../../media/{{item.icon}}" class="mx-1 small" style="width: 20px;" alt="{{item.titulo}}" >{{item.contacto}}</p>
+                    </div>
+                  {%endfor%}
+                </div>
+              {% endif%}
+
+              {%if data_siga_nos%}
+              <div class="row m-4">
+                <h4 class="text-center">Siga-nos</h4>
+                <div class="col">
+                  <ul class="nav justify-content-center">
+                      
+                        {% for item in data_siga_nos%}
+                          <li class="nav-item m-4"><a href="{{item.link}}" style="text-decoration: none;"><img  src="../../../media/{{item.icon}}" class="border rounded-5" alt="{{titulo}}" style="width: 50px;"></a></li>
+                        {%endfor%}
+                      
+                  </ul>
+                </div>
+
+              </div>
+              {%endif%}
+            </div>
+            <!-- Fotos -->
+            <div class="tab-pane fade" id="nav-fotos" role="tabpanel" aria-labelledby="nav-fotos-tab">
+              
+              <!-- imagens tab -->
+              <div class="row">
+                <div class="col-xs-12 ">
+                  <nav>
+                    <div class="nav nav-tabs nav-fill border-0" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active border rounded-5 m-2" id="nav-todas-tab" data-bs-toggle="tab" href="#nav-todas" role="tab" aria-controls="nav-todas" aria-selected="true">Todas</a>
+                      <a class="nav-item nav-link border rounded-5 m-2" id="nav-exterior-tab" data-bs-toggle="tab" href="#nav-exterior" role="tab" aria-controls="nav-exterior" aria-selected="false">Exterior</a>
+                      <a class="nav-item nav-link border rounded-5 m-2" id="nav-quartos-tab" data-bs-toggle="tab" href="#nav-quartos" role="tab" aria-controls="nav-quartos" aria-selected="false">Quartos</a>
+                      <a class="nav-item nav-link border rounded-5 m-2" id="nav-restaurante-tab" data-bs-toggle="tab" href="#nav-restaurante" role="tab" aria-controls="nav-restaurante" aria-selected="false">Restaurante</a>
+                    </div>
+                  </nav>
+                  <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-todas" role="tabpanel" aria-labelledby="nav-todas-tab">
+                      <div class="row">
+                        {%if data_fotos%}
+                          {% for item in data_fotos%}
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                              <!-- Portfolio item 1-->
+                              <div class="portfolio-item">
+                                  <a class="portfolio-link" data-bs-toggle="modal" href="#">
+                                      <div class="portfolio-hover">
+                                          <div class="portfolio-hover-content"><i class="fas fa-3x"></i></div>
+                                      </div>
+                                      <img class="img-fluid" src="../../media/{{item.imagem}}" alt="{{item.titulo}}" />
+                                  </a>
+                              </div>
+                            </div>
+                          {%endfor%}
+                        {%endif%} 
+                      </div>           
+                    </div>
+                    <!-- Exterior -->
+                    <div class="tab-pane fade" id="nav-exterior" role="tabpanel" aria-labelledby="nav-exterior-tab">
+                      <div class="row">
+                        {%if data_fotos_exterior%}
+                          {% for item in data_fotos_exterior%}
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                              <!-- Portfolio item 1-->
+                              <div class="portfolio-item">
+                                  <a class="portfolio-link" data-bs-toggle="modal" href="#">
+                                      <div class="portfolio-hover">
+                                          <div class="portfolio-hover-content"><i class="fas fa-3x"></i></div>
+                                      </div>
+                                      <img class="img-fluid" src="../../media/{{item.imagem}}" alt="{{item.titulo}}" />
+                                  </a>
+                              </div>
+                            </div>
+                          {%endfor%}
+                        {%endif%} 
+                      </div>
+                    </div>
+                    
+                    <!-- quartos -->
+                    <div class="tab-pane fade" id="nav-quartos" role="tabpanel" aria-labelledby="nav-quartos-tab">
+                      <div class="row">
+                        {%if data_fotos_quartos%}
+                          {% for item in data_fotos_quartos%}
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                              <!-- Portfolio item 1-->
+                              <div class="portfolio-item">
+                                  <a class="portfolio-link" data-bs-toggle="modal" href="#">
+                                      <div class="portfolio-hover">
+                                          <div class="portfolio-hover-content"><i class="fas fa-3x"></i></div>
+                                      </div>
+                                      <img class="img-fluid" src="../../media/{{item.imagem}}" alt="{{item.titulo}}" />
+                                  </a>
+                              </div>
+                            </div>
+                          {%endfor%}
+                        {%endif%} 
+                      </div>
+                    </div>
+                    <!-- restaurante -->
+                    <div class="tab-pane fade" id="nav-restaurante" role="tabpanel" aria-labelledby="nav-restaurante-tab">
+                      <div class="row">
+                        {%if data_fotos_restaurante%}
+                          {% for item in data_fotos_restaurante%}
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                              <!-- Portfolio item 1-->
+                              <div class="portfolio-item">
+                                  <a class="portfolio-link" data-bs-toggle="modal" href="#">
+                                      <div class="portfolio-hover">
+                                          <div class="portfolio-hover-content"><i class="fas fa-3x"></i></div>
+                                      </div>
+                                      <img class="img-fluid" src="../../media/{{item.imagem}}" alt="{{item.titulo}}" />
+                                  </a>
+                              </div>
+                            </div>
+                          {%endfor%}
+                        {%endif%} 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+        
+    </div>
+
+    
+
+    <section class="page-section bg-light" id="portfolio">
+      <div class="container">
+          <div class="text-center">
+              <h4 class="section-heading text-uppercase">Serviços </h4>
+              <h3 class="stext-center mt-2 mb-2" style="color: #ac6b55;">Eucalyptus Florence Residence</h3>
+              <h3 class="section-subheading text-muted"></h3>
+          </div>
+          <div class="row">
+              {%if data_servicos%}
+                {% for item in data_servicos%}
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas  fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../../media/{{item.imagem}}" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">{{item.titulo}}</div>
+                            <div class="portfolio-caption-subheading text-muted mt-2"><a href="{{item.link}}" class="btn btn-primary">{{item.titulo_link}}</a></div>
+                        </div>
+                    </div>
+                  </div>
+                {%endfor%}
+              {%endif%}
+              
+          </div>
+      </div>
+  </section>
+</body>
+{%endblock%}

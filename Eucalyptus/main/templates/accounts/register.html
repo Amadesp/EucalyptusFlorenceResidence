@@ -1,0 +1,29 @@
+{% extends "accounts/base.html" %}
+{% load static%}
+{% block content %}
+
+<div class="container">
+  <div class="container mt-5 pt-5">
+      <div class="container mt-5">
+          <div class="nav justify-content-center">
+              <form action="{% url 'register'%}" method="post">
+                  {%csrf_token%}
+                  <div class="row"><div class="col"><h4 class="text-center">Cadastro</h4></div></div>
+
+                  <div class="row my-2"><div class="col"><input type="text" name="username"  class="form-control" placeholder="Nome do usuario" required></div></div>
+                  <div class="row my-2"><div class="col"><input type="email" name="email"  class="form-control" placeholder="Exemplo@gmail.com" required></div></div>
+                  <div class="row my-2"><div class="col"><input type="password" name="_p"  class="form-control" placeholder="Senha" required></div></div>
+                  <div class="row my-2"><div class="col"><input type="password" name="__p"  class="form-control" placeholder="Confirmar Senha" required></div></div>
+                  <a href="{%url 'login'%}" class="text-center nav-link">Faça login se ja tiver uma conta!</a>
+                  {% for message in messages%}
+                    <p class="text-center text-danger small">{{message}}</p>
+                  {%endfor%}
+                  <div class="row"><div class="col"><input type="submit" value="Enviar" class="form-control"></div></div>
+                  
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

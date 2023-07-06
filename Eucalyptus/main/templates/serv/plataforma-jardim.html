@@ -1,0 +1,92 @@
+{%extends 'serv/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container mt-5 mb-5 pt-5">
+  <div class="row" id="carousel-1">
+    <div class="col">
+      <div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouseleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner">
+          {%if data_baner_jardim%}
+              {%for item in data_baner_jardim%}
+              <div class="carousel-item active" data-bs-interval="10000">
+                  <!-- <h3 class="text-center">Salão de festa.</h3> -->
+                  <img src="../../media/{{item.imagem}}" class="d-block w-100" alt="{{item.titulo}}" style="border: 10px; border-radius: 10px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>{{item.titulo}}</h5> -->
+                    <!-- <p>Some representative placeholder content for the first slide.</p> -->
+                  </div>
+                </div>
+              {%endfor%}
+          {%endif%}
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 ">
+      <nav>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-acerca-tab" data-bs-toggle="tab" href="#nav-acerca" role="tab" aria-controls="nav-acerca" aria-selected="true">Acerca</a>
+          <a class="nav-item nav-link" id="nav-localizacao-tab" data-bs-toggle="tab" href="#nav-localizacao" role="tab" aria-controls="nav-localizacao" aria-selected="false">Localização</a>
+          <a class="nav-item nav-link" id="nav-fotos-tab" data-bs-toggle="tab" href="#nav-fotos" role="tab" aria-controls="nav-fotos" aria-selected="false">Fotos</a>
+        </div>
+      </nav>
+      <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-acerca" role="tabpanel" aria-labelledby="nav-acerca-tab">
+
+          
+            
+          </div> 
+          <!--  -->
+           
+        </div>
+        <!-- Localizacao -->
+        <div class="tab-pane fade" id="nav-localizacao" role="tabpanel" aria-labelledby="nav-localizacao-tab">
+          
+        </div>
+        
+        <!-- Fotos -->
+        <div class="tab-pane fade" id="nav-fotos" role="tabpanel" aria-labelledby="nav-fotos-tab">
+          <div class="row">
+            {%if data_fotos_jardim%}
+              {% for item in data_fotos_jardim%}
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <!-- Portfolio item 1-->
+                  <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#">
+                          <div class="portfolio-hover">
+                              <div class="portfolio-hover-content"><i class="fas fa-3x"></i></div>
+                          </div>
+                          <img class="img-fluid" src="../../media/{{item.imagem}}" alt="{{item.titulo}}" />
+                      </a>
+                  </div>
+                </div>
+              {%endfor%}
+            {%endif%} 
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+{% endblock %}

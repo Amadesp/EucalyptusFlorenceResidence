@@ -1,0 +1,218 @@
+{%extends 'serv/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container mt-5 mb-5 pt-5">
+  <div class="row" id="carousel-1">
+    <div class="col">
+      <div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+          <button type="button" data-bs-target="#carouseleDark" data-bs-slide-to="1" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="2" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="4" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="5" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="6" aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="7" aria-label="Slide 7"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="8" aria-label="Slide 8"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="9" aria-label="Slide 9"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="10" aria-label="Slide 10"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="11" aria-label="Slide 11"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="12" aria-label="Slide 12"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="13" aria-label="Slide 13"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="14" aria-label="Slide 14"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="15" aria-label="Slide 15"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="16" aria-label="Slide 16"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="17" aria-label="Slide 17"></button>
+          <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="18" aria-label="Slide 18"></button>
+        </div>
+        <div class="carousel-inner">
+          {%if data_baner_quartos%}
+              
+              {%for item in data_baner_quartos%}
+                {%if item.titulo == 'Qauarto 1'%}
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <!-- <h3 class="text-center">Salão de festa.</h3> -->
+                    <img src="../../media/{{item.imagem}}" class="d-block w-100" alt="{{item.titulo}}" style="border: 10px; border-radius: 10px;">
+                    <div class="carousel-caption d-none d-md-block">
+                      <!-- <h5>{{item.titulo}}</h5> -->
+                      <!-- <p>Some representative placeholder content for the first slide.</p> -->
+                    </div>
+                  </div>
+                {%endif%}
+                <div class="carousel-item" data-bs-interval="10000">
+                    <!-- <h3 class="text-center">Salão de festa.</h3> -->
+                    <img src="../../media/{{item.imagem}}" class="d-block w-100" alt="{{item.titulo}}" style="border: 10px; border-radius: 10px;">
+                    <div class="carousel-caption d-none d-md-block">
+                      <!-- <h5>{{item.titulo}}</h5> -->
+                      <!-- <p>Some representative placeholder content for the first slide.</p> -->
+                    </div>
+                </div>
+              {%endfor%}
+          {%endif%}
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 ">
+      <nav>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-acerca-tab" data-bs-toggle="tab" href="#nav-acerca" role="tab" aria-controls="nav-acerca" aria-selected="true">Acerca</a>
+          <a class="nav-item nav-link" id="nav-localizacao-tab" data-bs-toggle="tab" href="#nav-localizacao" role="tab" aria-controls="nav-localizacao" aria-selected="false">Localização</a>
+          <a class="nav-item nav-link" id="nav-fotos-tab" data-bs-toggle="tab" href="#nav-fotos" role="tab" aria-controls="nav-fotos" aria-selected="false">Fotos</a>
+        </div>
+      </nav>
+      <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-acerca" role="tabpanel" aria-labelledby="nav-acerca-tab">
+
+          <div class="row my-3">
+            <div class="col">
+              <b><p>Quartos</p></b>
+              <ul>
+                  
+                  <li><p>Ligue ou visite as fotos do website para ver os precos e a disponibilidade de quartos especificos</p></li>
+
+              </ul>
+            </div>
+            <div class="col">
+              <!-- <b><p>Acessibilidade</p></b>
+              <ul>
+                  <li><p>Assento com acessibilidade</p></li>
+                  <li><p>Entrada com acessibilidade</p></li>
+
+              </ul> -->
+              
+            </div>
+            
+          </div> 
+          <!--  -->
+           
+        </div>
+        <!-- Localizacao -->
+        <div class="tab-pane fade" id="nav-localizacao" role="tabpanel" aria-labelledby="nav-localizacao-tab">
+          {%if data_localizacao%}
+            {%for item in data_localizacao%}
+              <p class=""><img src="{%static 'image/icon/local-Recovered.png'%}" class=" " style="width: 22px;" alt="" >&nbsp;{{item.localizacao}}</p>
+              <iframe id="mapaimg"  width="600" height="450" style="border:0;" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1623.497543128874!2d32.6431274642305!3d-25.837535110181953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x1ee696bf2b9e98c3%3A0xfa1383360f9eaa08!2sBairro%20dos%20Pescadores%2C%20Maputo!3m2!1d-25.8376312!2d32.6448812!5e1!3m2!1spt-PT!2smz!4v1688286862430!5m2!1spt-PT!2smz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            {%endfor%}
+          {%endif%}
+        </div>
+        
+        <!-- Fotos -->
+        <div class="tab-pane fade" id="nav-fotos" role="tabpanel" aria-labelledby="nav-fotos-tab">
+          <div class="row">
+            <div class="col-xs-12 ">
+              <nav>
+                <div class="nav nav-tabs nav-fill border-0" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active border rounded-5 m-2" id="nav-todas-tab" data-bs-toggle="tab" href="#nav-todas" role="tab" aria-controls="nav-todas" aria-selected="true">Todas</a>
+                  <a class="nav-item nav-link border rounded-5 m-2" id="nav-quartos-tab" data-bs-toggle="tab" href="#nav-quartos" role="tab" aria-controls="nav-quartos" aria-selected="false">Quartos</a>
+                  <a class="nav-item nav-link border rounded-5 m-2" id="nav-outras-tab" data-bs-toggle="tab" href="#nav-outras" role="tab" aria-controls="nav-outras" aria-selected="false">Outras</a>
+                </div>
+              </nav>
+              <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-todas" role="tabpanel" aria-labelledby="nav-todas-tab">
+                  <div class="row">
+                    {%if data_fotos%}
+                      {% for item in data_fotos%}
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                          <!-- Portfolio item 1-->
+                          <div class="portfolio-item">
+                              <a class="portfolio-link" data-bs-toggle="modal" href="#">
+                                  <div class="portfolio-hover">
+                                      <div class="portfolio-hover-content"><i class="fas fa-3x"></i></div>
+                                  </div>
+                                  <img class="img-fluid" src="../../media/{{item.imagem}}" alt="{{item.titulo}}" />
+                              </a>
+                          </div>
+                        </div>
+                      {%endfor%}
+                    {%endif%} 
+                  </div>           
+                </div>
+                
+                <!-- quartos -->
+                <div class="tab-pane fade" id="nav-quartos" role="tabpanel" aria-labelledby="nav-quartos-tab">
+                  <div class="row">
+                    {%if data_fotos_quartos%}
+                      {% for item in data_fotos_quartos%}
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                          <!-- Portfolio item 1-->
+                          <div class="portfolio-item">
+                              <a class="portfolio-link" data-bs-toggle="modal" href="#">
+                                  <div class="portfolio-hover">
+                                      <div class="portfolio-hover-content"><i class="fas fa-3x"></i></div>
+                                  </div>
+                                  <img class="img-fluid" src="../../media/{{item.imagem}}" alt="{{item.titulo}}" />
+                              </a>
+                          </div>
+                        </div>
+                      {%endfor%}
+                    {%endif%} 
+                  </div>
+                </div>
+                <!-- restaurante -->
+                <div class="tab-pane fade" id="nav-outras" role="tabpanel" aria-labelledby="nav-outras-tab">
+                  <div class="row">
+                    {%if data_fotos_outras%}
+                      {% for item in data_fotos_outras%}
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                          <!-- Portfolio item 1-->
+                          <div class="portfolio-item">
+                              <a class="portfolio-link" data-bs-toggle="modal" href="#">
+                                  <div class="portfolio-hover">
+                                      <div class="portfolio-hover-content"><i class="fas fa-3x"></i></div>
+                                  </div>
+                                  <img class="img-fluid" src="../../media/{{item.imagem}}" alt="{{item.titulo}}" />
+                              </a>
+                          </div>
+                        </div>
+                      {%endfor%}
+                    {%endif%} 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {%if data_quarto_preco%}
+        {%for item in data_quarto_preco%}
+          <div class="col my-3">
+            <div class="card" style="width: 18rem;">
+              <img src="../../../media/{{item.imagem}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{item.titulo}}</h5>
+          
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-muted small">{{item.status}}</li>
+                <li class="list-group-item">{{item.preco}}</li>
+                
+              </ul>
+              <div class="card-body my-3">
+                <p class="text-center">
+                <a href="{%url 'contacte-nos'%}" class="card-link btn bg-primary">Reservar</a>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        {%endfor%}
+      {%endif%}
+    </div>
+  </div>
+</div>
+{% endblock %}
