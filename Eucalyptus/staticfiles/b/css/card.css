@@ -1,0 +1,43 @@
+.title-slider {
+    float: left;
+    width: 100%;
+    position: relative;
+    margin: 30px auto 30px;
+    height: 38px
+}
+
+.title-slider h3 {
+    float: left;
+    font-size: 17px;
+    color: #000;
+    margin: 0 auto;
+    background: transparent;
+    padding: 10px 10px 10px 0;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    font-weight: 500;
+    border-bottom: 3px solid #F47D31
+}
+.title-slider .line-bottom {
+    height: 1px;
+    background: #efefef;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    margin-top: -1px
+}
+.title-slider .link-ver-todos {
+    float: left;
+    font-size: 17px;
+    color: #9d9bad;
+    margin: 0 auto;
+    background: white;
+    padding: 0px 0 0 0px;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    bottom: -2px;
+    margin-top: -13px
+}
